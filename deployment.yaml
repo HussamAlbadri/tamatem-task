@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-tamatem-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-tamatem-app
+  template:
+    metadata:
+      labels:
+        app: my-tamatem-app
+    spec:
+      containers:
+      - name: my-tamatem-app
+        image: my-tamatem-app
+        ports:
+        - containerPort: 5000
